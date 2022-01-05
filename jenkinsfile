@@ -17,7 +17,7 @@ stages {
         echo 'Testing...'
         snykSecurity(
           snykInstallation: 'snyk',
-          snykTokenId: 'snyk-jenkins',
+          snykTokenId: 'snyk-pipeline',
           // place other parameters here
         )
       }
