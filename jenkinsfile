@@ -6,10 +6,26 @@ pipeline {
     }
 
   }
-    stage('Snyk') {
+stages {
+    stage('Build') {
       steps {
-        snykSecurity(failOnIssues: true, snykInstallation: 'Snyk')
+        echo 'Building...'
+      }
+    }
+    stage('Test') {
+      steps {
+        echo 'Testing...'
+        snykSecurity(
+          snykInstallation: 'snyk',
+          snykTokenId: 'snyk-jenkins',
+          // place other parameters here
+        )
+      }
+    }
+    stage('Deploy') {
+      steps {
+        echo 'Deploying...'
       }
     }
   }
-
+}
