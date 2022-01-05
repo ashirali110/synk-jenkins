@@ -22,6 +22,13 @@ stages {
         )
       }
     }
+    stage('MegaLinter'){
+           steps {
+             bat 'docker pull megalinter/megalinter'
+             bat 'docker run -e "FILEIO_REPORTER=true" -v %WORKSPACE%:/tmp/lint megalinter/megalinter'
+            
+        }
+    }
     stage('Deploy') {
       steps {
         echo 'Deploying...'
