@@ -1,6 +1,6 @@
 pipeline {
   agent {
-    node2 {
+   any {
       args '-p 3000:3000'
       image 'node:12.7.0-alpine'
     }
