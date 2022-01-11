@@ -12,7 +12,7 @@ pipeline {
                 script {
 			gke_ci_imagebuilding{
 			imageName = "${imageName}"
-		 	branchName = "${branchName}
+		 	branchName = "${branchName}"
             }
           }
         }
