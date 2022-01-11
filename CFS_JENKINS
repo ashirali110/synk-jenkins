@@ -3,7 +3,7 @@ pipeline {
     agent any
     parameters {
 		string(name: 'imageName', defaultValue: 'name of the image', description: 'Name of the image to be built and deployed')
-		string(name: 'branchName', defaultValue: 'sprinting', description: 'value qa will deploy on qa cluster and value starting with sprint will deploy on dev cluster')
+		string(name: 'branchName', defaultValue: 'sprint', description: 'value qa will deploy on qa cluster and value starting with sprint will deploy on dev cluster')
 	}
 
     stages {
